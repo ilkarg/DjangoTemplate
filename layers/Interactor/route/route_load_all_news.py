@@ -1,5 +1,6 @@
 from rest_framework.views import APIView
 from layers.Interactor.usecase.load_all_news.get.us_get_load_all_news import us_get_load_all_news
+from django.contrib.auth.models import User
 
 class RouteLoadAllNews(APIView):
     def get(self, request):
