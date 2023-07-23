@@ -3,3 +3,4 @@ from layers.Interactor.route.route_add_news import RouteAddNews
 from layers.Interactor.route.route_load_news import RouteLoadNews
 from layers.Interactor.route.route_register_user import RouteRegisterUser
 from layers.Interactor.route.route_login_user import RouteLoginUser
+from layers.Interactor.route.route_logout_user import RouteLogoutUser

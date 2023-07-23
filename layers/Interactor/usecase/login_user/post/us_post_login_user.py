@@ -11,9 +11,9 @@ class us_post_login_user:
 				login(request, user)
 			token = Token.objects.get_or_create(user=user)[0].key
 		except User.DoesNotExist:
-			return Response({'message': 'Неверные логин или пароль'})
+			return Response({'response': 'Неверные логин или пароль'})
 
 		return Response({
-			'message': 'Вы успешно вошли в аккаунт',
+			'response': 'Вы успешно вошли в аккаунт',
 			'token': token
 		})

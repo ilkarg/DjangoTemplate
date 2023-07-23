@@ -1,11 +1,11 @@
 from rest_framework.views import APIView
-from layers.Interactor.usecase.load_all_news.get.us_get_load_all_news import us_get_load_all_news
+from layers.Interactor.usecase.logout_user.post.us_post_logout_user import us_post_logout_user
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-class RouteLoadAllNews(APIView):
+class RouteLogoutUser(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
-        return us_get_load_all_news.execute(request)
+    def post(self, request):
+      return us_post_logout_user.execute(request)
