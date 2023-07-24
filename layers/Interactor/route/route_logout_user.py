@@ -8,4 +8,4 @@ class RouteLogoutUser(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-      return us_post_logout_user.execute(request)
+        return us_post_logout_user.execute(request)

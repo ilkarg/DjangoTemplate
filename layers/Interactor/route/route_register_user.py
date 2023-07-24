@@ -1,9 +1,11 @@
 from rest_framework.views import APIView
 from layers.Interactor.usecase.register_user.post.us_post_register_user import us_post_register_user
-from rest_framework.permissions import AllowAny
+from rest_framework.authentication import TokenAuthentication
+from layers.CustomPermission.IsNotAuthenticated import IsNotAuthenticated
 
 class RouteRegisterUser(APIView):
-    permission_classes = [AllowAny]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsNotAuthenticated]
 
     def post(self, request):
-    	return us_post_register_user.execute(request)
+        return us_post_register_user.execute(request)
