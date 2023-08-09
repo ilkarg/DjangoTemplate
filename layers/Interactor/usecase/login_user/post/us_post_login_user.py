@@ -1,15 +1,16 @@
 from rest_framework.response import Response
 from django.contrib.auth.models import User
-from rest_framework.authtoken.models import Token
+from layers.ORM.model.User.UserController import UserController
+from layers.ORM.model.Token.TokenController import TokenController
 from django.contrib.auth import login
 
 class us_post_login_user:
 	def execute(request):
 		try:
-			user = User.objects.get(username=request.data.get('username'), password=request.data.get('password'))
+			user = UserController.login(username=request.data.get('username'), password=request.data.get('password'))
 			if user is not None:
 				login(request, user)
-			token = Token.objects.get_or_create(user=user)[0].key
+			token = TokenController.generate_token(user=user)
 		except User.DoesNotExist:
 			return Response({'response': 'Неверные логин или пароль'})
 
