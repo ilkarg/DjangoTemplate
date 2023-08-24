@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'project',
-    'layers.ORM'
+    'modules.module_news',
+    'modules.module_auth',
+    'core'
 ]
 
 MIDDLEWARE = [

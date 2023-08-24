@@ -2,7 +2,6 @@ from rest_framework.response import Response
 from django.contrib.auth.models import User
 from modules.module_auth.orm.model.user.requests.request_login import RequestLogin
 from modules.module_auth.orm.model.token.requests.request_generate_token import RequestGenerateToken
-from layers.ORM.model.Token.TokenController import TokenController
 from django.contrib.auth import login
 
 class UsPostLoginUser:

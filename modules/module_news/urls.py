@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from modules.module_news import views
 
 urlpatterns = [
     path('load_all_news/', views.ViewLoadAllNews.as_view()),
