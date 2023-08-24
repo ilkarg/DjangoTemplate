@@ -1,0 +1,3 @@
+from modules.module_auth.views.view_register_user import ViewRegisterUser
+from modules.module_auth.views.view_login_user import ViewLoginUser
+from modules.module_auth.views.view_logout_user import ViewLogoutUser
